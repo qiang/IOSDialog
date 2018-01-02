@@ -17,7 +17,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by liuqiang on 10/23/15.
+ * Author: liuqiang
+ * Time: 2018-01-02 13:28
+ * Description:
  */
 public class ActionSheetDialog {
     private Context context;

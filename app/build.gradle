@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    compileSdkVersion Integer.parseInt(rootProject.ANDROID_BUILD_SDK_VERSION)
+    buildToolsVersion rootProject.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.adorkable.iosdialogdemo"
-        minSdkVersion 15
-        targetSdkVersion 23
+        minSdkVersion Integer.parseInt(rootProject.ANDROID_MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(rootProject.ANDROID_TARGET_SDK_VERSION)
         versionCode 1
         versionName "1.0"
     }
@@ -23,5 +23,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
-    compile project(':IosDialog')
+    compile project(':lib-ios-dialog')
 }
