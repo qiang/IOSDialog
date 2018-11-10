@@ -7,5 +7,4 @@ Android 仿IOS的 Dialog，包括底部弹出和 AlertDialog
 
 动图演示如下：
 
-![image](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/show.gif)
-
+<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/show.gif" alt="动图演示效果" width="250px">
