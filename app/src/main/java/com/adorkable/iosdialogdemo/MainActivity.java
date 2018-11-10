@@ -54,7 +54,8 @@ public class MainActivity extends Activity implements OnClickListener {
                                     public void onClick(int which) {
 
                                     }
-                                }).show();
+                                })
+                        .show();
                 break;
             case R.id.btn2:
                 new BottomSheetDialog(MainActivity.this)
@@ -199,22 +200,26 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 "item" + which, Toast.LENGTH_SHORT)
                                                 .show();
                                     }
-                                }).show();
+                                })
+                        .show();
                 break;
             case R.id.btn4:
-                new AlertDialog(MainActivity.this).builder().setTitle("退出当前账号")
+                new AlertDialog(MainActivity.this)
+                        .builder()
+                        .setTitle("退出当前账号")
                         .setMsg("再连续登陆15天，就可变身为QQ达人。退出QQ可能会使你现有记录归零，确定退出？")
                         .setPositiveButton("确认退出", new OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
                             }
-                        }).setNegativeButton("取消", new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                        })
+                        .setNegativeButton("取消", new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
-                    }
-                }).show();
+                            }
+                        }).show();
                 break;
             case R.id.btn5:
                 new AlertDialog(MainActivity.this).builder()
@@ -224,7 +229,8 @@ public class MainActivity extends Activity implements OnClickListener {
                             public void onClick(View v) {
 
                             }
-                        }).show();
+                        })
+                        .show();
                 break;
             default:
                 break;

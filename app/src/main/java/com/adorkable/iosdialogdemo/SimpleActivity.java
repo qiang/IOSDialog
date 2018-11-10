@@ -1,24 +1,27 @@
-# IOSDialogDemo
-----
+package com.adorkable.iosdialogdemo;
 
-### 简介
-Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
 
-屏幕演示截图保存在 [images文件夹](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images)
+import com.adorkable.iosdialog.AlertDialog;
+import com.adorkable.iosdialog.BottomSheetDialog;
+import com.adorkable.iosdialog.BottomSheetDialog.OnSheetItemClickListener;
+import com.adorkable.iosdialog.BottomSheetDialog.SheetItemColor;
 
-动图演示如下：
+public class SimpleActivity extends Activity {
 
-<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/show.gif" alt="动图演示效果" width="250px">
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_simple);
+    }
 
-### 使用方法
-
-#### 1. AlertDialog
-
-<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/device-2015-10-23-131505.png" alt="AlertDialog" width="300px">
-
-
-
-```
+    public void showAlertDialog(View v) {
         new AlertDialog(SimpleActivity.this)
                 .builder()
                 .setTitle("退出当前账号")
@@ -35,13 +38,10 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
                     }
                 }).show();
-```
+    }
 
-#### 2. BottomSheetDialog
+    public void showBottomSheetDialog(View v) {
 
-<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/device-2015-10-23-131524.png" alt="AlertDialog" width="300px">
-
-```
         new BottomSheetDialog(SimpleActivity.this)
                 .builder()
                 .setTitle("这个是 BottomSheetDialog 的title ")
@@ -67,4 +67,10 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
                         })
                 .show();
 
-```
+    }
+
+
+    public void more(View v) {
+        startActivity(new Intent(this, MainActivity.class));
+    }
+}

@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/bottomSheetDialog"
+        android:onClick="showBottomSheetDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="BottomSheet" />
+
+    <Button
+        android:id="@+id/alertDialog"
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:onClick="showAlertDialog"
+        android:layout_height="wrap_content"
+        android:text="AlertDialog" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:textAllCaps="false"
+        android:onClick="more"
+        android:layout_height="wrap_content"
+        android:text="更多使用方式" />
+
+</LinearLayout>
