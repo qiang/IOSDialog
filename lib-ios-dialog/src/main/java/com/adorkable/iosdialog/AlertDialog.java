@@ -41,8 +41,7 @@ public class AlertDialog {
 
     public AlertDialog builder() {
         // 获取Dialog布局
-        View view = LayoutInflater.from(context).inflate(
-                R.layout.view_alertdialog, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_alertdialog, null);
 
         // 获取自定义Dialog布局中的控件
         lLayout_bg = (LinearLayout) view.findViewById(R.id.lLayout_bg);
@@ -62,8 +61,10 @@ public class AlertDialog {
         dialog.setContentView(view);
 
         // 调整dialog背景大小
-        lLayout_bg.setLayoutParams(new FrameLayout.LayoutParams((int) (display
-                .getWidth() * 0.85), LinearLayout.LayoutParams.WRAP_CONTENT));
+        lLayout_bg.setLayoutParams(
+                new FrameLayout.LayoutParams(
+                        (int) (display.getWidth() * 0.85),
+                        LinearLayout.LayoutParams.WRAP_CONTENT));
 
         return this;
     }
@@ -111,8 +112,7 @@ public class AlertDialog {
         return this;
     }
 
-    public AlertDialog setNegativeButton(String text,
-                                         final View.OnClickListener listener) {
+    public AlertDialog setNegativeButton(String text, final View.OnClickListener listener) {
         showNegBtn = true;
         if ("".equals(text)) {
             btn_neg.setText("取消");

@@ -21,7 +21,7 @@ import java.util.List;
  * Time: 2018-01-02 13:28
  * Description:
  */
-public class ActionSheetDialog {
+public class BottomSheetDialog {
     private Context context;
     private Dialog dialog;
     private TextView txt_title;
@@ -32,25 +32,23 @@ public class ActionSheetDialog {
     private List<SheetItem> sheetItemList;
     private Display display;
 
-    public ActionSheetDialog(Context context) {
+    public BottomSheetDialog(Context context) {
         this.context = context;
         WindowManager windowManager = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
         display = windowManager.getDefaultDisplay();
     }
 
-    public ActionSheetDialog builder() {
+    public BottomSheetDialog builder() {
         // 获取Dialog布局
-        View view = LayoutInflater.from(context).inflate(
-                R.layout.view_actionsheet, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_actionsheet, null);
 
         // 设置Dialog最小宽度为屏幕宽度
         view.setMinimumWidth(display.getWidth());
 
         // 获取自定义Dialog布局中的控件
         sLayout_content = (ScrollView) view.findViewById(R.id.sLayout_content);
-        lLayout_content = (LinearLayout) view
-                .findViewById(R.id.lLayout_content);
+        lLayout_content = (LinearLayout) view.findViewById(R.id.lLayout_content);
         txt_title = (TextView) view.findViewById(R.id.txt_title);
         txt_cancel = (TextView) view.findViewById(R.id.txt_cancel);
         txt_cancel.setOnClickListener(new View.OnClickListener() {
@@ -73,33 +71,30 @@ public class ActionSheetDialog {
         return this;
     }
 
-    public ActionSheetDialog setTitle(String title) {
+    public BottomSheetDialog setTitle(String title) {
         showTitle = true;
         txt_title.setVisibility(View.VISIBLE);
         txt_title.setText(title);
         return this;
     }
 
-    public ActionSheetDialog setCancelable(boolean cancel) {
+    public BottomSheetDialog setCancelable(boolean cancel) {
         dialog.setCancelable(cancel);
         return this;
     }
 
-    public ActionSheetDialog setCanceledOnTouchOutside(boolean cancel) {
+    public BottomSheetDialog setCanceledOnTouchOutside(boolean cancel) {
         dialog.setCanceledOnTouchOutside(cancel);
         return this;
     }
 
     /**
-     *
-     * @param strItem
-     *            条目名称
-     * @param color
-     *            条目字体颜色，设置null则默认蓝色
+     * @param strItem  条目名称
+     * @param color    条目字体颜色，设置null则默认蓝色
      * @param listener
      * @return
      */
-    public ActionSheetDialog addSheetItem(String strItem, SheetItemColor color,
+    public BottomSheetDialog addSheetItem(String strItem, SheetItemColor color,
                                           OnSheetItemClickListener listener) {
         if (sheetItemList == null) {
             sheetItemList = new ArrayList<SheetItem>();
@@ -108,7 +103,9 @@ public class ActionSheetDialog {
         return this;
     }
 
-    /** 设置条目布局 */
+    /**
+     * 设置条目布局
+     */
     private void setSheetItems() {
         if (sheetItemList == null || sheetItemList.size() <= 0) {
             return;

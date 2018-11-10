@@ -7,9 +7,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.adorkable.iosdialog.ActionSheetDialog;
-import com.adorkable.iosdialog.ActionSheetDialog.OnSheetItemClickListener;
-import com.adorkable.iosdialog.ActionSheetDialog.SheetItemColor;
+import com.adorkable.iosdialog.BottomSheetDialog;
+import com.adorkable.iosdialog.BottomSheetDialog.OnSheetItemClickListener;
+import com.adorkable.iosdialog.BottomSheetDialog.SheetItemColor;
 import com.adorkable.iosdialog.AlertDialog;
 
 public class MainActivity extends Activity implements OnClickListener {
@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn1:
-                new ActionSheetDialog(MainActivity.this)
+                new BottomSheetDialog(MainActivity.this)
                         .builder()
                         .setTitle("清空消息列表后，聊天记录依然保留，确定要清空消息列表？")
                         .setCancelable(false)
@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                 }).show();
                 break;
             case R.id.btn2:
-                new ActionSheetDialog(MainActivity.this)
+                new BottomSheetDialog(MainActivity.this)
                         .builder()
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
@@ -105,7 +105,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                 }).show();
                 break;
             case R.id.btn3:
-                new ActionSheetDialog(MainActivity.this)
+                new BottomSheetDialog(MainActivity.this)
                         .builder()
                         .setTitle("请选择操作")
                         .setCancelable(false)

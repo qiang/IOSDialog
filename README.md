@@ -1,13 +1,13 @@
 # IOSDialogDemo
-Android 仿IOS的dialog，包括底部弹出和AlertDialog
+----
 
-后来整理到了我的常用[开发工具箱](https://github.com/niyingxunzong/ToolBox)
+Android 仿IOS的 Dialog，包括底部弹出和 AlertDialog
 
+屏幕演示截图保存在 [images文件夹](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images)
 
-屏幕截图如下：
-具体图片在[images文件夹](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/app/src/main/images)
+概略图如下：
 
-![image](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/app/src/main/images/图1.png)
-![image](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/app/src/main/images/图2.png)
+![image](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/图1.png)
+![image](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/图2.png)
 
 
