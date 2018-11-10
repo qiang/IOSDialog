@@ -1,7 +1,7 @@
 # IOSDialogDemo
 ----
 
-### 简介
+### 一、简介
 Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
 屏幕演示截图保存在 [images文件夹](https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images)
@@ -10,7 +10,7 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
 <img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/show.gif" alt="动图演示效果" width="250px">
 
-### 使用方法
+### 二、使用方法
 
 #### 1. AlertDialog
 
