@@ -14,7 +14,7 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
 #### 1. AlertDialog
 
-<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/device-2015-10-23-131505.png" alt="AlertDialog" width="300px">
+<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/device-2015-10-23-131539.png" alt="AlertDialog" width="300px">
 
 
 
