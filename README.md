@@ -12,6 +12,15 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
 ### 二、使用方法
 
+#### 0. 引用方法
+
+此库并没有传到 gradle 仓库里面去，如果不想引入源码可以直接引入aar包，生成aar的方式。
+双击下图中的 assemble :
+
+<img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/AEB7D9AC-556F-4B2E-AE14-6CF5E34E4069.png" alt="aar生成方式" width="250px">
+
+然后生成的aar在 IOSDialogDemo/lib-ios-dialog/build/outputs/aar 里面
+
 #### 1. AlertDialog
 
 <img src="https://github.com/niyingxunzong/IOSDialogDemo/blob/master/images/device-2015-10-23-131539.png" alt="AlertDialog" width="300px">
