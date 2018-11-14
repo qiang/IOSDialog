@@ -1,19 +1,18 @@
 package com.adorkable.iosdialogdemo;
 
-import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.adorkable.iosdialog.AlertDialog;
 import com.adorkable.iosdialog.BottomSheetDialog;
 import com.adorkable.iosdialog.BottomSheetDialog.OnSheetItemClickListener;
-import com.adorkable.iosdialog.BottomSheetDialog.SheetItemColor;
 
-public class SimpleActivity extends Activity {
+public class SimpleActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +46,12 @@ public class SimpleActivity extends Activity {
                 .setTitle("这个是 BottomSheetDialog 的title ")
                 .setCancelable(false)    //设置手机返回按钮是否有效
                 .setCanceledOnTouchOutside(false)  //设置 点击空白处是否取消 Dialog 显示
-                .addSheetItem("条目一", SheetItemColor.Red,   //设置字体颜色
+                //如果条目样式一样，可以直接设置默认样式
+                .setDefaultItemStyle(new BottomSheetDialog.SheetItemTextStyle("#000000", 16))
+                .setBottomBtnStyle(new BottomSheetDialog.SheetItemTextStyle("#ff0000", 18))
+                .addSheetItem("条目一",
+                        //可以对一个条目单独设置字体样式
+                        new BottomSheetDialog.SheetItemTextStyle("#ff00ff"),   //设置字体样式
                         new OnSheetItemClickListener() {
                             @Override
                             public void onClick(int which) {
@@ -56,7 +60,16 @@ public class SimpleActivity extends Activity {
                                         .show();
                             }
                         })
-                .addSheetItem("条目二", SheetItemColor.Red,
+                .addSheetItem("条目二",
+                        new OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                Toast.makeText(SimpleActivity.this,
+                                        "item" + which, Toast.LENGTH_SHORT)
+                                        .show();
+                            }
+                        })
+                .addSheetItem("条目三",
                         new OnSheetItemClickListener() {
                             @Override
                             public void onClick(int which) {

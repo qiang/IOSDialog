@@ -56,7 +56,12 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
                 .setTitle("这个是 BottomSheetDialog 的title ")
                 .setCancelable(false)    //设置手机返回按钮是否有效
                 .setCanceledOnTouchOutside(false)  //设置 点击空白处是否取消 Dialog 显示
-                .addSheetItem("条目一", SheetItemColor.Red,   //设置字体颜色
+                //如果条目样式一样，可以直接设置默认样式
+                .setDefaultItemStyle(new BottomSheetDialog.SheetItemTextStyle("#000000", 16))
+                .setBottomBtnStyle(new BottomSheetDialog.SheetItemTextStyle("#ff0000", 18))
+                .addSheetItem("条目一",
+                        //可以对一个条目单独设置字体样式
+                        new BottomSheetDialog.SheetItemTextStyle("#ff00ff"),   //设置字体样式
                         new OnSheetItemClickListener() {
                             @Override
                             public void onClick(int which) {
@@ -65,7 +70,16 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
                                         .show();
                             }
                         })
-                .addSheetItem("条目二", SheetItemColor.Red,
+                .addSheetItem("条目二",
+                        new OnSheetItemClickListener() {
+                            @Override
+                            public void onClick(int which) {
+                                Toast.makeText(SimpleActivity.this,
+                                        "item" + which, Toast.LENGTH_SHORT)
+                                        .show();
+                            }
+                        })
+                .addSheetItem("条目三",
                         new OnSheetItemClickListener() {
                             @Override
                             public void onClick(int which) {
@@ -75,5 +89,6 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
                             }
                         })
                 .show();
+
 
 ```

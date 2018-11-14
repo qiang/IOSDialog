@@ -1,18 +1,18 @@
 package com.adorkable.iosdialogdemo;
 
-import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.adorkable.iosdialog.AlertDialog;
 import com.adorkable.iosdialog.BottomSheetDialog;
 import com.adorkable.iosdialog.BottomSheetDialog.OnSheetItemClickListener;
-import com.adorkable.iosdialog.BottomSheetDialog.SheetItemColor;
-import com.adorkable.iosdialog.AlertDialog;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener {
     private Button btn1;
     private Button btn2;
     private Button btn3;
@@ -48,7 +48,9 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setTitle("清空消息列表后，聊天记录依然保留，确定要清空消息列表？")
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
-                        .addSheetItem("清空消息列表", SheetItemColor.Red,
+                        .addSheetItem("清空消息列表",
+                                //设置字体样式 单独对item字体进行样式设置
+                                new BottomSheetDialog.SheetItemTextStyle("#FD4A2E", 18),
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -62,42 +64,42 @@ public class MainActivity extends Activity implements OnClickListener {
                         .builder()
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
-                        .addSheetItem("发送给好友", SheetItemColor.Blue,
+                        .addSheetItem("发送给好友",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("转载到空间相册", SheetItemColor.Blue,
+                        .addSheetItem("转载到空间相册",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("上传到群相册", SheetItemColor.Blue,
+                        .addSheetItem("上传到群相册",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("保存到手机", SheetItemColor.Blue,
+                        .addSheetItem("保存到手机",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("收藏", SheetItemColor.Blue,
+                        .addSheetItem("收藏",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("查看聊天图片", SheetItemColor.Blue,
+                        .addSheetItem("查看聊天图片",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -111,7 +113,9 @@ public class MainActivity extends Activity implements OnClickListener {
                         .setTitle("请选择操作")
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
-                        .addSheetItem("条目一", SheetItemColor.Blue,
+                        //如果条目样式一样，可以直接设置默认样式
+                        .setDefaultItemStyle(new BottomSheetDialog.SheetItemTextStyle("#FD4A2E", 18))
+                        .addSheetItem("条目一",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -120,7 +124,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目二", SheetItemColor.Blue,
+                        .addSheetItem("条目二",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -129,7 +133,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目三", SheetItemColor.Blue,
+                        .addSheetItem("条目三",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -138,7 +142,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目四", SheetItemColor.Blue,
+                        .addSheetItem("条目四",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -147,7 +151,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目五", SheetItemColor.Blue,
+                        .addSheetItem("条目五",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -156,7 +160,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目六", SheetItemColor.Blue,
+                        .addSheetItem("条目六",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -165,7 +169,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目七", SheetItemColor.Blue,
+                        .addSheetItem("条目七",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -174,7 +178,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目八", SheetItemColor.Blue,
+                        .addSheetItem("条目八",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -183,7 +187,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目九", SheetItemColor.Blue,
+                        .addSheetItem("条目九",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -192,7 +196,7 @@ public class MainActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目十", SheetItemColor.Blue,
+                        .addSheetItem("条目十",
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
