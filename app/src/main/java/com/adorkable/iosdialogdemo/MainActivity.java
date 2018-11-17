@@ -1,6 +1,5 @@
 package com.adorkable.iosdialogdemo;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn1:
                 new BottomSheetDialog(MainActivity.this)
-                        .builder()
+                        .init()
                         .setTitle("清空消息列表后，聊天记录依然保留，确定要清空消息列表？")
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 break;
             case R.id.btn2:
                 new BottomSheetDialog(MainActivity.this)
-                        .builder()
+                        .init()
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
                         .addSheetItem("发送给好友",
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 break;
             case R.id.btn3:
                 new BottomSheetDialog(MainActivity.this)
-                        .builder()
+                        .init()
                         .setTitle("请选择操作")
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
@@ -209,7 +208,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                 break;
             case R.id.btn4:
                 new AlertDialog(MainActivity.this)
-                        .builder()
+                        .init()
                         .setTitle("退出当前账号")
                         .setMsg("再连续登陆15天，就可变身为QQ达人。退出QQ可能会使你现有记录归零，确定退出？")
                         .setPositiveButton("确认退出", new OnClickListener() {
@@ -226,7 +225,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
                         }).show();
                 break;
             case R.id.btn5:
-                new AlertDialog(MainActivity.this).builder()
+                new AlertDialog(MainActivity.this).init()
                         .setMsg("你现在无法接收到新消息提醒。请到系统-设置-通知中开启消息提醒")
                         .setNegativeButton("确定", new OnClickListener() {
                             @Override

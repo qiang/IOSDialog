@@ -29,7 +29,7 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
 ```
         new AlertDialog(SimpleActivity.this)
-                .builder()
+                .init()
                 .setTitle("退出当前账号")
                 .setMsg("再连续登陆15天，就可变身为QQ达人。退出QQ可能会使你现有记录归零，确定退出？")
                 .setPositiveButton("确认退出", new OnClickListener() {
@@ -52,7 +52,7 @@ Android 仿IOS的 Dialog，包括 BottomSheetDialog 和 AlertDialog
 
 ```
         new BottomSheetDialog(SimpleActivity.this)
-                .builder()
+                .init()
                 .setTitle("这个是 BottomSheetDialog 的title ")
                 .setCancelable(false)    //设置手机返回按钮是否有效
                 .setCanceledOnTouchOutside(false)  //设置 点击空白处是否取消 Dialog 显示

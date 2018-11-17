@@ -20,11 +20,11 @@ import android.widget.TextView;
 public class AlertDialog {
     private Context context;
     private Dialog dialog;
-    private LinearLayout lLayout_bg;
-    private TextView txt_title;
-    private TextView txt_msg;
-    private Button btn_neg;
-    private Button btn_pos;
+    private LinearLayout container;
+    private TextView titleTv;
+    private TextView msgTv;
+    private Button negBtn;
+    private Button posBtn;
     private ImageView img_line;
     private Display display;
     private boolean showTitle = false;
@@ -39,20 +39,20 @@ public class AlertDialog {
         display = windowManager.getDefaultDisplay();
     }
 
-    public AlertDialog builder() {
+    public AlertDialog init() {
         // 获取Dialog布局
         View view = LayoutInflater.from(context).inflate(R.layout.view_alertdialog, null);
 
         // 获取自定义Dialog布局中的控件
-        lLayout_bg = (LinearLayout) view.findViewById(R.id.lLayout_bg);
-        txt_title = (TextView) view.findViewById(R.id.txt_title);
-        txt_title.setVisibility(View.GONE);
-        txt_msg = (TextView) view.findViewById(R.id.txt_msg);
-        txt_msg.setVisibility(View.GONE);
-        btn_neg = (Button) view.findViewById(R.id.btn_neg);
-        btn_neg.setVisibility(View.GONE);
-        btn_pos = (Button) view.findViewById(R.id.btn_pos);
-        btn_pos.setVisibility(View.GONE);
+        container = (LinearLayout) view.findViewById(R.id.container);
+        titleTv = (TextView) view.findViewById(R.id.txt_title);
+        titleTv.setVisibility(View.GONE);
+        msgTv = (TextView) view.findViewById(R.id.txt_msg);
+        msgTv.setVisibility(View.GONE);
+        negBtn = (Button) view.findViewById(R.id.btn_neg);
+        negBtn.setVisibility(View.GONE);
+        posBtn = (Button) view.findViewById(R.id.btn_pos);
+        posBtn.setVisibility(View.GONE);
         img_line = (ImageView) view.findViewById(R.id.img_line);
         img_line.setVisibility(View.GONE);
 
@@ -61,7 +61,7 @@ public class AlertDialog {
         dialog.setContentView(view);
 
         // 调整dialog背景大小
-        lLayout_bg.setLayoutParams(
+        container.setLayoutParams(
                 new FrameLayout.LayoutParams(
                         (int) (display.getWidth() * 0.85),
                         LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -72,9 +72,9 @@ public class AlertDialog {
     public AlertDialog setTitle(String title) {
         showTitle = true;
         if ("".equals(title)) {
-            txt_title.setText("标题");
+            titleTv.setText("标题");
         } else {
-            txt_title.setText(title);
+            titleTv.setText(title);
         }
         return this;
     }
@@ -82,9 +82,9 @@ public class AlertDialog {
     public AlertDialog setMsg(String msg) {
         showMsg = true;
         if ("".equals(msg)) {
-            txt_msg.setText("内容");
+            msgTv.setText("内容");
         } else {
-            txt_msg.setText(msg);
+            msgTv.setText(msg);
         }
         return this;
     }
@@ -98,11 +98,11 @@ public class AlertDialog {
                                          final View.OnClickListener listener) {
         showPosBtn = true;
         if ("".equals(text)) {
-            btn_pos.setText("确定");
+            posBtn.setText("确定");
         } else {
-            btn_pos.setText(text);
+            posBtn.setText(text);
         }
-        btn_pos.setOnClickListener(new View.OnClickListener() {
+        posBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onClick(v);
@@ -115,11 +115,11 @@ public class AlertDialog {
     public AlertDialog setNegativeButton(String text, final View.OnClickListener listener) {
         showNegBtn = true;
         if ("".equals(text)) {
-            btn_neg.setText("取消");
+            negBtn.setText("取消");
         } else {
-            btn_neg.setText(text);
+            negBtn.setText(text);
         }
-        btn_neg.setOnClickListener(new View.OnClickListener() {
+        negBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.onClick(v);
@@ -131,23 +131,23 @@ public class AlertDialog {
 
     private void setLayout() {
         if (!showTitle && !showMsg) {
-            txt_title.setText("提示");
-            txt_title.setVisibility(View.VISIBLE);
+            titleTv.setText("提示");
+            titleTv.setVisibility(View.VISIBLE);
         }
 
         if (showTitle) {
-            txt_title.setVisibility(View.VISIBLE);
+            titleTv.setVisibility(View.VISIBLE);
         }
 
         if (showMsg) {
-            txt_msg.setVisibility(View.VISIBLE);
+            msgTv.setVisibility(View.VISIBLE);
         }
 
         if (!showPosBtn && !showNegBtn) {
-            btn_pos.setText("确定");
-            btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.alertdialog_single_selector);
-            btn_pos.setOnClickListener(new View.OnClickListener() {
+            posBtn.setText("确定");
+            posBtn.setVisibility(View.VISIBLE);
+            posBtn.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            posBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     dialog.dismiss();
@@ -156,21 +156,21 @@ public class AlertDialog {
         }
 
         if (showPosBtn && showNegBtn) {
-            btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.alertdialog_right_selector);
-            btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.alertdialog_left_selector);
+            posBtn.setVisibility(View.VISIBLE);
+            posBtn.setBackgroundResource(R.drawable.alertdialog_right_selector);
+            negBtn.setVisibility(View.VISIBLE);
+            negBtn.setBackgroundResource(R.drawable.alertdialog_left_selector);
             img_line.setVisibility(View.VISIBLE);
         }
 
         if (showPosBtn && !showNegBtn) {
-            btn_pos.setVisibility(View.VISIBLE);
-            btn_pos.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            posBtn.setVisibility(View.VISIBLE);
+            posBtn.setBackgroundResource(R.drawable.alertdialog_single_selector);
         }
 
         if (!showPosBtn && showNegBtn) {
-            btn_neg.setVisibility(View.VISIBLE);
-            btn_neg.setBackgroundResource(R.drawable.alertdialog_single_selector);
+            negBtn.setVisibility(View.VISIBLE);
+            negBtn.setBackgroundResource(R.drawable.alertdialog_single_selector);
         }
     }
 

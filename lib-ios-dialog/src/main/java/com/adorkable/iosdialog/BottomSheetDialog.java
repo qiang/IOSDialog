@@ -45,7 +45,7 @@ public class BottomSheetDialog {
         defaultBottomBtnStyle.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
     }
 
-    public BottomSheetDialog builder() {
+    public BottomSheetDialog init() {
         // 获取Dialog布局
         View view = LayoutInflater.from(mContext).inflate(R.layout.view_actionsheet, null);
 
